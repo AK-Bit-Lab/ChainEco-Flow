@@ -4,15 +4,6 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
-    inputs:
-      source_repo:
-        description: "Optional source repo label for traceability"
-        required: false
-        default: "AK-Bit-Lab/chainstamp-sdk"
-      source_ref:
-        description: "Optional source ref label for traceability"
-        required: false
-        default: "refs/heads/main"
   repository_dispatch:
     types:
       - chainstamp_pulse
@@ -31,8 +22,8 @@ jobs:
       - name: Trigger context
         run: |
           echo "event_name=${{ github.event_name }}"
-          echo "source_repo=${{ github.event.client_payload.repo || inputs.source_repo || 'AK-Bit-Lab/chainstamp-sdk' }}"
-          echo "source_ref=${{ github.event.client_payload.ref || inputs.source_ref || 'refs/heads/main' }}"
+          echo "source_repo=${{ github.event.client_payload.repo || 'AK-Bit-Lab/chainstamp-sdk' }}"
+          echo "source_ref=${{ github.event.client_payload.ref || 'refs/heads/main' }}"
           echo "source_sha=${{ github.event.client_payload.sha || 'n/a' }}"
 
       - name: Automated Package Verification & Installs
