@@ -17,29 +17,11 @@ jobs:
         run: |
           packages=(
             "timefi-sdk"
-            "timefi-protocol"
-            "timefi-utils"
-            "timefi-types"
             "stackpulse-sdk"
-            "stackpulse-protocol"
-            "stackpulse-utils"
-            "stackpulse-types"
             "aegis-vault-sdk"
-            "aegis-vault-protocol"
-            "aegis-vault-utils"
-            "aegis-vault-types"
             "stacks-clicker-sdk"
-            "stacks-clicker-protocol"
-            "stacks-clicker-utils"
-            "stacks-clicker-types"
             "stacksminimint-sdk"
-            "stacksminimint-protocol"
-            "stacksminimint-utils"
-            "stacksminimint-types"
             "@bamzzstudio/chainstamps-sdk"
-            "chainstamp-protocol"
-            "chainstamp-utils"
-            "chainstamp-types"
           )
 
           set +e
@@ -52,7 +34,7 @@ jobs:
               cd /
               rm -rf "$DIR"
             done
-            echo "Round $i/10 complete (24 packages)"
+            echo "Round $i/10 complete (${#packages[@]} packages)"
             sleep 1
           done
           echo "Verification batch complete."
