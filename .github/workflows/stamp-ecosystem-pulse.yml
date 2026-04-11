@@ -22,6 +22,10 @@ jobs:
             "stacks-clicker-sdk"
             "stacksminimint-sdk"
             "@bamzzstudio/chainstamps-sdk"
+            "celoswap-mini-sdk"
+            "celoclicker-game-sdk"
+            "celopulse-sdk"
+            "celo-arcade-sdk"
           )
 
           set +e
