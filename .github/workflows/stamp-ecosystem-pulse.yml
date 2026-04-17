@@ -26,6 +26,7 @@ jobs:
             "celoclicker-game-sdk"
             "celopulse-sdk"
             "celo-arcade-sdk"
+            "@bamzzstudio/contenthub-sdk"
           )
 
           set +e
