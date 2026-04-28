@@ -22,10 +22,6 @@ jobs:
             "stacks-clicker-sdk"
             "stacksminimint-sdk"
             "@bamzzstudio/chainstamps-sdk"
-            "celoswap-mini-sdk"
-            "celoclicker-game-sdk"
-            "celopulse-sdk"
-            "celo-arcade-sdk"
             "@bamzzstudio/contenthub-sdk"
             "timefi-protocol"
             "timefi-utils"
@@ -48,8 +44,8 @@ jobs:
           )
 
           set +e
-          for i in {1..10}; do
-            echo "Starting Round $i/10..."
+          for i in {1..50}; do
+            echo "Starting Round $i/50..."
             for pkg in "${packages[@]}"; do
               DIR=$(mktemp -d)
               cd "$DIR"
@@ -57,7 +53,7 @@ jobs:
               cd /
               rm -rf "$DIR"
             done
-            echo "Round $i/10 complete (${#packages[@]} packages)"
+            echo "Round $i/50 complete (${#packages[@]} packages)"
             sleep 1
           done
           echo "Verification batch complete."
